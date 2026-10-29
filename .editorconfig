@@ -1,0 +1,70 @@
+# EditorConfig: https://editorconfig.org
+# Place at the repository root. "root = true" stops editors from looking higher up.
+root = true
+
+# ---------------------------------------------------------------
+# Defaults for all files
+# ---------------------------------------------------------------
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# ---------------------------------------------------------------
+# Backend: Java and Maven
+# ---------------------------------------------------------------
+[*.java]
+indent_size = 4
+max_line_length = 120
+
+[pom.xml]
+indent_size = 4
+
+[*.properties]
+indent_size = 4
+
+# ---------------------------------------------------------------
+# Frontend: TypeScript, React, styles
+# ---------------------------------------------------------------
+[*.{ts,tsx,js,jsx,mjs,cjs,json,css,scss,html}]
+indent_size = 2
+
+# ---------------------------------------------------------------
+# Database migrations and SQL
+# ---------------------------------------------------------------
+[*.sql]
+indent_size = 4
+
+# ---------------------------------------------------------------
+# Config and infrastructure
+# ---------------------------------------------------------------
+[*.{yml,yaml}]
+indent_size = 2
+
+[Dockerfile*]
+indent_size = 4
+
+# Makefiles require real tabs
+[{Makefile,*.mk}]
+indent_style = tab
+
+# Shell scripts
+[*.sh]
+indent_size = 2
+
+# ---------------------------------------------------------------
+# Docs
+# ---------------------------------------------------------------
+# Trailing double-space is a Markdown line break, so don't trim it
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# ---------------------------------------------------------------
+# Windows scripts keep CRLF
+# ---------------------------------------------------------------
+[*.{bat,cmd}]
+end_of_line = crlf
