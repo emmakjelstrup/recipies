@@ -14,7 +14,6 @@ application-secrets.yml
 # ---------------------------------------------------------------
 backend/target/
 **/target/
-!**/.mvn/wrapper/maven-wrapper.jar
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar.bak
 *.class
@@ -22,6 +21,7 @@ backend/target/
 *.jar
 *.war
 *.ear
+!**/.mvn/wrapper/maven-wrapper.jar
 hs_err_pid*
 replay_pid*
 dependency-reduced-pom.xml
