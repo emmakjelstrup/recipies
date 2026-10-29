@@ -36,7 +36,20 @@ infra/      Docker Compose and deployment configuration
 
 ## Getting started
 
-Setup instructions will be added as the project takes shape (see the foundation milestone).
+Setup instructions will grow as the project takes shape (see the foundation milestone).
+
+### Backend
+
+Prerequisites: JDK 21. Maven is not needed; use the Maven Wrapper (`./mvnw`), which downloads the pinned Maven version on first run.
+
+```bash
+cd backend
+./mvnw test                                            # unit tests
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local  # run on http://localhost:8080
+```
+
+Check that it is up: `curl http://localhost:8080/actuator/health` returns `{"status":"UP",...}`.
+Configuration comes from environment variables; see [`.env.example`](.env.example).
 
 ## Documentation
 
