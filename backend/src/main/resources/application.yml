@@ -1,0 +1,24 @@
+# Shared configuration for every environment.
+# Environment-specific values come from environment variables, written as ${NAME:default}.
+# Never put secrets in this file.
+
+spring:
+  application:
+    name: cookbook
+  threads:
+    virtual:
+      # Handle each request on a Java 21 virtual thread, so blocking I/O does not tie up platform threads.
+      enabled: true
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Only expose what we need. Other actuator endpoints can leak internals.
+        include: health
+  endpoint:
+    health:
+      show-details: never
