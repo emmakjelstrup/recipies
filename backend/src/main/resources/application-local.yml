@@ -1,0 +1,11 @@
+# Local development overrides, active with: ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
+# Layered on top of application.yml. No secrets here either: pass them as environment variables.
+
+management:
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    io.github.emmakjelstrup.cookbook: DEBUG
