@@ -61,9 +61,12 @@ Run the relevant tests before proposing a change, and say what you ran.
 - Keep components small and typed. No `any` without a comment explaining why.
 
 **Git and GitHub**
-- One issue per branch and PR. Branch names: `feat/<issue-number>-short-name`, `fix/...`, `chore/...`.
-- Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, `test:`).
-- PR descriptions reference the issue with `Closes #N` and follow `.github/pull_request_template.md`.
+- The project key is `CB` (Cookbook). Every change belongs to a GitHub issue, and the key plus issue number (`CB-<issue-number>`) is part of the branch name, commit messages and PR title.
+- One issue per branch and PR. Branch names: `CB-<issue-number>` or `CB-<issue-number>-short-name`, for example `CB-1-repo-hygiene`. No `feat/` or `fix/` prefixes.
+- Commit messages start with `CB-<issue-number>` followed by a short imperative summary, for example `CB-1 Add gitignore and editorconfig`. Do not use Conventional Commit prefixes (`feat:`, `fix:`).
+- PR titles follow the same format (`CB-1 Set up repository hygiene`), because squash-merging makes the PR title the commit on `main`.
+- PR descriptions reference the issue with `Closes #N` (GitHub does not link `CB-1` automatically) and follow `.github/pull_request_template.md`.
+- If a change has no issue, ask me before inventing a number.
 - Never push to `main`. Open a PR.
 - Never commit secrets, API keys or personal data.
 
